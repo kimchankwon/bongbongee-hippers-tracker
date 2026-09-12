@@ -1,0 +1,129 @@
+:root {
+  --rose-quartz: #f7cac9;
+  --rose-quartz-deep: #e8a0a0;
+  --serenity: #92a8d1;
+  --serenity-deep: #5b7bb0;
+  --bg: #fdf6f8;
+  --card: #ffffff;
+  --text: #3d3a4b;
+  --muted: #8a8494;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--rose-quartz) 0%, var(--serenity) 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+#root { max-width: 960px; margin: 0 auto; padding: 24px; }
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 8px;
+  background: linear-gradient(90deg, var(--rose-quartz-deep), var(--serenity-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header p { color: var(--muted); margin: 0; }
+
+.stats {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px 28px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(91, 123, 176, 0.15);
+  min-width: 140px;
+}
+
+.stat-card .num { font-size: 2rem; font-weight: 700; }
+.stat-card .label { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-card.rose .num { color: var(--rose-quartz-deep); }
+.stat-card.serenity .num { color: var(--serenity-deep); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.hipper-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 12px rgba(91, 123, 176, 0.1);
+}
+
+.hipper-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(91, 123, 176, 0.2); }
+.hipper-card.available { border-color: var(--serenity); }
+.hipper-card.interested { border-color: var(--rose-quartz-deep); }
+.hipper-card.sold { border-color: #b0b0b0; opacity: 0.7; }
+
+.hipper-card .id { font-size: 0.75rem; color: var(--muted); }
+.hipper-card .status {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+.status.available { background: #e8f5e9; color: #2e7d32; }
+.status.interested { background: #fff3e0; color: #e65100; }
+.status.sold { background: #eeeeee; color: #616161; }
+
+.hipper-card .buyer { font-size: 0.85rem; margin-top: 8px; color: var(--text); }
+
+.form {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 32px;
+  box-shadow: 0 4px 20px rgba(91, 123, 176, 0.15);
+}
+
+.form h2 { margin-top: 0; }
+
+.form label { display: block; margin: 12px 0 4px; font-size: 0.9rem; font-weight: 600; }
+.form input, .form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.form button {
+  margin-top: 16px;
+  background: linear-gradient(90deg, var(--rose-quartz-deep), var(--serenity-deep));
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.form button:hover { opacity: 0.9; }
+
+.note { font-size: 0.8rem; color: var(--muted); margin-top: 16px; text-align: center; }
